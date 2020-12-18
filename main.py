@@ -5,16 +5,17 @@ from db.rooms_db import RoomsInDB
 from db.rooms_db import get_room, update_room
 from models.user_models import UserIn, UserOut
 from models.rooms_models import RoomsIn, RoomsOut
-from fastapi import FastAPI, HTTPException
-
+from fastapi import FastAPI
+from fastapi import HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+
 api = FastAPI()
+
 origins = [
 "http://localhost.tiangolo.com", "https://localhost.tiangolo.com",
 "http://localhost", "http://localhost:8080","https://seasonhotel-app.herokuapp.com"
+
 ]
-
-
 api.add_middleware(
     CORSMiddleware, allow_origins=origins,
     allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
